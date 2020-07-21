@@ -1,0 +1,1 @@
+*/10 * * * *	www-data	php /var/www/htdocs/cliupdate.php
