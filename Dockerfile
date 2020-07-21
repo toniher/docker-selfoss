@@ -5,7 +5,7 @@ ARG SELFOSS_VERSION=2.18
 RUN set -x; \
     apt-get update && apt-get -y upgrade;
 RUN set -x; \
-    apt-get install -y cron unzip;
+    apt-get install -y cron unzip php-sqlite3 php-mysql;
 RUN set -x; \
     rm -rf /var/lib/apt/lists/*
 
