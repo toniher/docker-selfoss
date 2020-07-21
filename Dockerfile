@@ -5,13 +5,12 @@ ARG SELFOSS_VERSION=2.18
 RUN set -x; \
     apt-get update && apt-get -y upgrade;
 RUN set -x; \
-    apt-get install -y cron unzip php-sqlite3 php-mysql;
+    apt-get install -y unzip php-sqlite3 php-mysql;
 RUN set -x; \
     rm -rf /var/lib/apt/lists/*
 
 # Starting processes
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY cron-selfoss /etc/cron.d/selfoss
 
 COPY nginx-default.conf /etc/nginx/conf.d/default.conf
 
