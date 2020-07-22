@@ -21,7 +21,7 @@ USER www-data
 WORKDIR /var/www/htdocs
 
 RUN cd /tmp; wget -c -t0 https://bintray.com/fossar/selfoss/download_file?file_path=selfoss-$SELFOSS_VERSION.zip -O selfoss-$SELFOSS_VERSION.zip
-RUN unzip /tmp/selfoss-$SELFOSS_VERSION.zip -d /var/www/htdocs; rm /tmp/selfoss-$SELFOSS_VERSION.zip
+RUN unzip /tmp/selfoss-$SELFOSS_VERSION.zip -d /var/www/htdocs; mv /var/www/htdocs/selfoss/* /var/www/htdocs/; rm -rf /var/www/htdocs/selfoss/; rm /tmp/selfoss-$SELFOSS_VERSION.zip
 
 RUN rm -rf data
 
