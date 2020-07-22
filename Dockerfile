@@ -14,6 +14,8 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 COPY nginx-default.conf /etc/nginx/conf.d/default.conf
 
+RUN echo 'max_execution_time = 300' >> /etc/php/7.3/fpm/conf.d/maxexectime.ini;
+
 RUN mkdir -p /var/www/htdocs; chown -R www-data:www-data /var/www/htdocs
 
 USER www-data
