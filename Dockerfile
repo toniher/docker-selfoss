@@ -1,6 +1,6 @@
 FROM toniher/nginx-php:nginx-1.16-php-7.3
 
-ARG SELFOSS_VERSION=2.19-664481d
+ARG SELFOSS_VERSION=2.19-ff7d057
 
 RUN set -x; \
     apt-get update && apt-get -y upgrade;
