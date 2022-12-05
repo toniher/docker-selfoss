@@ -1,6 +1,6 @@
 FROM toniher/nginx-php:nginx-1.16-php-7.3
 
-ARG SELFOSS_VERSION=2.19-9415c0b
+ARG SELFOSS_VERSION=2.19
 
 RUN set -x; \
     apt-get update && apt-get -y upgrade;
@@ -22,7 +22,7 @@ USER www-data
 
 WORKDIR /var/www/htdocs
 
-RUN cd /tmp; wget -c -t0 https://dl.cloudsmith.io/public/fossar/selfoss-git/raw/names/selfoss.zip/versions/$SELFOSS_VERSION/selfoss-$SELFOSS_VERSION.zip -O selfoss-$SELFOSS_VERSION.zip
+RUN cd /tmp; wget -c -t0 https://github.com/fossar/selfoss/releases/download/$SELFOSS_VERSION/selfoss-$SELFOSS_VERSION.zip
 RUN unzip /tmp/selfoss-$SELFOSS_VERSION.zip -d /var/www/htdocs; mv /var/www/htdocs/selfoss/* /var/www/htdocs/; rm -rf /var/www/htdocs/selfoss/; rm /tmp/selfoss-$SELFOSS_VERSION.zip
 
 RUN rm -rf data
