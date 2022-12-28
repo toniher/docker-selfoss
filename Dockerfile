@@ -1,11 +1,11 @@
-FROM toniher/nginx-php:nginx-1.16-php-7.3
+FROM toniher/nginx-php:nginx-1.23-php-8.1-sury
 
 ARG SELFOSS_VERSION=2.19
 
 RUN set -x; \
     apt-get update && apt-get -y upgrade;
 RUN set -x; \
-    apt-get install -y unzip php-sqlite3 php-mysql;
+    apt-get install -y unzip php8.1-sqlite3 php8.1-mysql;
 RUN set -x; \
     rm -rf /var/lib/apt/lists/*
 
@@ -14,7 +14,7 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 COPY nginx-default.conf /etc/nginx/conf.d/default.conf
 
-COPY maxexectime.ini /etc/php/7.3/fpm/conf.d/maxexectime.ini
+COPY maxexectime.ini /etc/php/8.1/fpm/conf.d/maxexectime.ini
 
 RUN mkdir -p /var/www/htdocs; chown -R www-data:www-data /var/www/htdocs
 
