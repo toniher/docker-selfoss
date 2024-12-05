@@ -1,13 +1,13 @@
 FROM toniher/nginx-php:nginx-1.23-php-8.1-sury
 
-ARG SELFOSS_VERSION=2.20-e0c9805
+ARG SELFOSS_VERSION=2.20-1b2eeda
 
 RUN set -x; \
-    apt-get update && apt-get -y upgrade;
+  apt-get update && apt-get -y upgrade;
 RUN set -x; \
-    apt-get install -y unzip php8.1-sqlite3 php8.1-mysql;
+  apt-get install -y unzip php8.1-sqlite3 php8.1-mysql;
 RUN set -x; \
-    rm -rf /var/lib/apt/lists/*
+  rm -rf /var/lib/apt/lists/*
 
 # Starting processes
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
