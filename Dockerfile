@@ -1,6 +1,6 @@
 FROM toniher/nginx-php:nginx-1.27-php-8.2
 
-ARG SELFOSS_VERSION=2.20-f837ee6
+ARG SELFOSS_VERSION=2.20-7fa8a6d
 
 RUN set -x; \
   apt-get update && apt-get -y upgrade;
