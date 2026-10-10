@@ -1,3 +1,6 @@
+# DOCKER DEPLOYMENT BEING MANTAINED AS A BRANCH OF [toniher/selfoss](https://github.com/toniher/selfoss)
+
+
 # docker-selfoss
 Docker of selfoss RSS reader
 
